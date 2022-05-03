@@ -2,7 +2,6 @@ package com.api.orderapi.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.UUID;
 
 @Entity
 @Table(name = "TB_ORDER")

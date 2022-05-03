@@ -47,7 +47,7 @@ class OrderServiceTest {
     }
 
     @Test
-    void save() {
+    void createAndSaveOrder() {
         Mockito.when(orderRepository.save(order)).thenReturn(order);
         Order response = orderService.save(order);
         assertNotNull(response);
@@ -55,7 +55,7 @@ class OrderServiceTest {
     }
 
     @Test
-    void findAll() {
+    void findAllOrders() {
         Mockito.when(orderRepository.findAll()).thenReturn(List.of(order));
 
         List<Order> response = orderService.findAll();
@@ -73,7 +73,7 @@ class OrderServiceTest {
     }
 
     @Test
-    void delete() {
+    void deleteOrder() {
         Mockito.when(orderRepository.findById(Mockito.anyLong())).thenReturn(optionalOrder);
         orderService.delete(order);
         Mockito.verify(orderRepository, Mockito.times(1)).delete(order);
